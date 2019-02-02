@@ -17,7 +17,7 @@ try:
     # entre estas utilizará la política declarada anteriormente.
     # La autenticación la intentará realizar de 4 maneras DIFERENTES en orden de prioridad.
     # En caso de no obtener ningun fichero o clave como última opción intenta autenticarse con claves/usuario planas.
-    ssh.connect('35.204.68.203',port=22,username='pruebaURJC',password='TallerURJC123')
+    ssh.connect('IP',port=1234,username='xxxx',password='xxxx')
     # Abrimos una sesion sftp para descargar ficheros.
     sftp = ssh.open_sftp()
     # Si el sistema operativo en el que estoy es windows descargo un modulo powershell a elección y lo ejecuto

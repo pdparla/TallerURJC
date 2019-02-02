@@ -35,15 +35,13 @@ while True:
     ethernet = EthPacket(eth[0],eth[1],eth[2])
     breakpoint()
     print ('############## MAC ##############')
-    #cambiar a esto
     print (str(ethernet))
     # Si es IPv4
     if (ethernet.protocol == IPv4):
-
         # Para obtener la transformación entre tipos de C y Python
         # Obtenemos los caracteres en el formato indicado (ver !BBHHHBBH4s4s) ! indica red, B integer/unsigned char H integer/unsigned short , s String/char[]. los 4 indica tamaño del array/string
         iph = unpack('!BBHHHBBH4s4s' , packet[ethernet.length:ethernet.length+20])
-        # Introducimos version De los 4 primeros bits del byte 
+        # Introducimos version De los 4 primeros bits del byte
         version = iph[0] >> 4
         # indica ip header length (ihl)
         ihl = iph[0] & 0xF * 4
@@ -52,7 +50,6 @@ while True:
         print ('############## IPv4 ##############')
         #Cambiar a esto
         print (str(ipv4))
-        # Se calcula en función de la capa anterior (Un paquete tcp sin datos ocupa 20 bytes de aquí el mas 20)
         # TCP
         if (ipv4.protocol == TCP):
             # Formateamos el paquete
@@ -60,7 +57,6 @@ while True:
             Tcp = TCPPacket(tcph[0],tcph[1],tcph[2],tcph[3],tcph[4],tcph[6] )
 
             print ('############## TCP ##############')
-            #Cambiar a esto
             print (str(Tcp))
             h_size = ethernet.length + ipv4.ihl + Tcp.dataoffset * 4
             #Coger data del paquete
@@ -76,7 +72,7 @@ while True:
 
             print ('############## UDP ##############')
             print(str(Udp))
-            # 8 es el minimo bytes de cabecera de udp
+            # 8 es el numero de bytes de cabecera UDP
             h_size = ethernet.length + ipv4.ihl + 8
             #Coger data del paquete
             Udp.addData(packet[h_size:].decode('utf-8',errors='ignore'))

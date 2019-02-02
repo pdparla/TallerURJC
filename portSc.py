@@ -35,6 +35,7 @@ def scanSYN(d_addr, port):
             global cerrado
             cerrado = cerrado + 1
     except Exception:
+        # Si salta cualquier fallo: cerramos conexion 
         RST = IP(dst=d_addr)/TCP(sport=s_port, dport=port,flags = 'R')
         send(RST)
         print(f'No he podido escanear {d_addr} en el puerto {str(port)}')
