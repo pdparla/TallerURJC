@@ -4,10 +4,10 @@ Repo para programas/slides del HackOn 2019
 
 Aquí os dejo una lista de los contenidos que utilizamos para crear los ejercicios de seguridad ofensiva:
 
-https://nmap.org/man/es/man-host-discovery.html
-https://docs.python.org/3/
-Mirar: sockets, struct, os, sys, datetime, venv, pdb.
-https://nostarch.com/blackhatpython
+  1. https://nmap.org/man/es/man-host-discovery.html
+
+  2. https://docs.python.org/3/ Mirar: sockets, struct, os, sys, datetime, venv, pdb.
+  3. https://nostarch.com/blackhatpython
 
 Para saber como funcionan los protocolos:
 
