@@ -12,7 +12,7 @@ print("producto 5 * 5")
 mult = 5*5
 print(mult)
 print("--------\n")
-breakpoint()
+breakpoint();
 # area triangulo
 print("area de un triangulo")
 b=12

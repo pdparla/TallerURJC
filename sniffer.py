@@ -33,7 +33,6 @@ while True:
     # Transformamos en el formato de ethernet
     eth = unpack('!6s6sH' , packet[:14])
     ethernet = EthPacket(eth[0],eth[1],eth[2])
-    breakpoint()
     print ('############## MAC ##############')
     print (str(ethernet))
     # Si es IPv4
